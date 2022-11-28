@@ -58,16 +58,16 @@ Key     | Value
 Accept  | application/json
 
 #### To Access Public Routes
-[POST] - localhost:8000/register - Register User (To get the token)
-[POST] - localhost:8000/login - Login to existing User (Get the token)
-[GET]  - localhost:8000/items - Retrieve all Items
-[GET]  - localhost:8000/items/{id} - Show single Item
+- [POST] - localhost:8000/register - Register User (To get the token)
+- [POST] - localhost:8000/login - Login to existing User (Get the token)
+- [GET]  - localhost:8000/items - Retrieve all Items
+- [GET]  - localhost:8000/items/{id} - Show single Item
 
 #### To Access Private Routes
-[POST]    - localhost:8000/items - Create new Item
-[PUT]     - localhost:8000/items/{id} - Update existing Item
-[DELETE]  - localhost:8000/items/{id} - Delete existing Item
-[POST]    - localhost:8000/logout - Logout (Terminate session)
+- [POST]    - localhost:8000/items - Create new Item
+- [PUT]     - localhost:8000/items/{id} - Update existing Item
+- [DELETE]  - localhost:8000/items/{id} - Delete existing Item
+- [POST]    - localhost:8000/logout - Logout (Terminate session)
 
 _Notes: To access the private routes, you need to get the token (copy the token after you successfully login or registered_
 
