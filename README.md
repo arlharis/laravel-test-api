@@ -7,57 +7,88 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Laravel-Test-API
+> This is the sample Laravel API apps with integrating Sanctum Authentication for User
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Table of Contents
+* [General info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Setup](#setup)
+* [Usage](#usage)
+<!-- * [Room for Improvement](#room-for-improvement) -->
+* [Acknowledgements](#acknowledgements)
+* [Contact](#contact)
+* [Code of Conduct](#code-of-conduct)
+* [License](#license)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## General Information
+- This apps is created to show how is Laravel API with Sanctum Authentication works
+- The API should contain:
+  - An endpoint that takes a key (string) and value (JSON string) and store them
+  - An endpoint that takes a key and returns the corresponding latest value of that key
+  - An endpoint that takes a key and a timestamp and returns whatever the value of the key was at the given timestamp
+  - An endpoint that will display all the key values pairs
+- Currently only have 2 current Models to test:
+  - User
+  - Item
+- Have two separated routes to show how sanctum authentication works
+  - Public Route
+  - Private Route
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Technologies Used
+- Laravel 8.83.26
+- PHP 7.4.19
+- MySQL 14.14
 
-## Learning Laravel
+## Setup
+#### Installation
+1. Run `cp .env.example .env` command to copy example into real `.env` file, then edit it with DB credentials and other settings you preferred.
+2. Run `composer install` command.
+3. Run `php artisan key:generate` command.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Running the server locally
+1. Run `php artisan serve`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Usage
+This application does not have UI as it is developed to demo about API. You need to use any API test platform, for my case I am using [_Postman_](https://www.postman.com/)
 
-## Laravel Sponsors
+Please initialize the headers like below to get the JSON format of output:
+Key     | Value
+------  | ------
+Accept  | application/json
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### To Access Public Routes
+[POST] - localhost:8000/register - Register User (To get the token)
+[POST] - localhost:8000/login - Login to existing User (Get the token)
+[GET]  - localhost:8000/items - Retrieve all Items
+[GET]  - localhost:8000/items/{id} - Show single Item
 
-### Premium Partners
+#### To Access Private Routes
+[POST]    - localhost:8000/items - Create new Item
+[PUT]     - localhost:8000/items/{id} - Update existing Item
+[DELETE]  - localhost:8000/items/{id} - Delete existing Item
+[POST]    - localhost:8000/logout - Logout (Terminate session)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+_Notes: To access the private routes, you need to get the token (copy the token after you successfully login or registered_
 
-## Contributing
+- Go to `Authorization` section of the Postman.
+- Select `Bearer Token`.
+- Paste the `token`.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<!-- ## Room of Improvement -->
+
+## Acknowledgement
+- [Traversy Media](https://www.youtube.com/@TraversyMedia)
+- [Laravel Docs](https://laravel.com/docs/8.x/sanctum#main-content)
+
+## Contact
+Created by [Lukman Imran](https://github.com/arlharis)
+Feel free to contact me:
+[LinkedIn](https://www.linkedin.com/in/arlharis/)
 
 ## Code of Conduct
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
