@@ -46,13 +46,17 @@ class ItemController extends Controller
     public function destroy(Item $item)
     {
         $item = Item::find($item);
-        return Item::destroy($item);
+        Item::destroy($item);
+
+        return response([
+            'messages' => 'Item has succesfully deleted'
+         ], 202);
     }
 
-    public function search($string)
+    public function search($keyword)
     {        
-        $item = Item::where('name', 'like', '%' . $string . '%')->orWhere('description', 'like', '%' . $string . '%')
-        ->orWhere('slug', 'like', '%' . $string . '%')->orWhere('created_at', 'like', '%' . $string . '%')->get();
+        $item = Item::where('name', 'like', '%' . $keyword . '%')->orWhere('description', 'like', '%' . $keyword . '%')
+        ->orWhere('slug', 'like', '%' . $keyword . '%')->orWhere('created_at', 'like', '%' . $keyword . '%')->get();
         
         return $item;
     }
