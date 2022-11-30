@@ -15,7 +15,6 @@
 * [Technologies Used](#technologies-used)
 * [Setup](#setup)
 * [Usage](#usage)
-<!-- * [Room for Improvement](#room-for-improvement) -->
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 * [Code of Conduct](#code-of-conduct)
@@ -83,7 +82,8 @@ _Notes: To access the private routes, you need to get the token (copy the token 
 - Select `Bearer Token`.
 - Paste the `token`.
 
-<!-- ## Room of Improvement -->
+#### Live Demo
+_You can visit this site to play with API online. [Live Demo](https://85900ff824.lb3.amezmo.co)_
 
 ## Acknowledgement
 - [Traversy Media](https://www.youtube.com/@TraversyMedia)
