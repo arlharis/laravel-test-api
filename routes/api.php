@@ -23,7 +23,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/item/all', [ItemController::class, 'index']);
 Route::get('/item/{item}', [ItemController::class, 'show']);
-Route::get('/item/search/{timestamp}', [ItemController::class, 'search']);
+Route::get('/item/search/{keyword}', [ItemController::class, 'search']);
 
 // Protected Routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
