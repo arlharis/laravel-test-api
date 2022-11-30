@@ -83,7 +83,11 @@ _Notes: To access the private routes, you need to get the token (copy the token 
 - Paste the `token`.
 
 #### Live Demo
-_You can visit this site to play with API online. [Live Demo](https://85900ff824.lb3.amezmo.co)_
+_You can use this link to play with API online without cloning the repo. [Live Demo](https://85900ff824.lb3.amezmo.co)_
+
+```
+https://85900ff824.lb3.amezmo.co
+```
 
 ## Acknowledgement
 - [Traversy Media](https://www.youtube.com/@TraversyMedia)
