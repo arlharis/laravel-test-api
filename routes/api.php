@@ -21,13 +21,14 @@ use Illuminate\Support\Facades\Route;
 // Public Routes
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
-Route::get('/items', [ItemController::class, 'index']);
-Route::get('/items/{id}', [ItemController::class, 'show']);
+Route::get('/item/all', [ItemController::class, 'index']);
+Route::get('/item/{item}', [ItemController::class, 'show']);
+Route::get('/item/search/{timestamp}', [ItemController::class, 'search']);
 
 // Protected Routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::post('/items', [ItemController::class, 'store']);
-    Route::put('/items/{id}', [ItemController::class, 'update']);
-    Route::delete('/items/{id}', [ItemController::class, 'destroy']);
+    Route::post('/item', [ItemController::class, 'store']);
+    Route::put('/item/{item}', [ItemController::class, 'update']);
+    Route::delete('/item/{item}', [ItemController::class, 'destroy']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
