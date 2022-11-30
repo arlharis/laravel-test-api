@@ -57,16 +57,24 @@ Key     | Value
 ------  | ------
 Accept  | application/json
 
+To store the data using API, you need to add this following key and value:
+Key         |   Value
+------      |   ------
+name*       |   name_value
+description |   description_value
+
+_Notes: Please use the slug to update/delete and retrive single data_
 #### To Access Public Routes
 - [POST] - localhost:8000/api/register - Register User (To get the token)
 - [POST] - localhost:8000/api/login - Login to existing User (Get the token)
-- [GET]  - localhost:8000/api/items - Retrieve all Items
-- [GET]  - localhost:8000/api/items/{id} - Show single Item
+- [GET]  - localhost:8000/api/item/all - Retrieve all Items
+- [GET]  - localhost:8000/api/item/{item} - Show single Item
+- [GET]  - localhost:8000/api/item/search/{keyword} - Search method
 
 #### To Access Private Routes
-- [POST]    - localhost:8000/api/items - Create new Item
-- [PUT]     - localhost:8000/api/items/{id} - Update existing Item
-- [DELETE]  - localhost:8000/api/items/{id} - Delete existing Item
+- [POST]    - localhost:8000/api/item - Create new Item
+- [PUT]     - localhost:8000/api/item/{item} - Update existing Item
+- [DELETE]  - localhost:8000/api/item/{item} - Delete existing Item
 - [POST]    - localhost:8000/api/logout - Logout (Terminate session)
 
 _Notes: To access the private routes, you need to get the token (copy the token after you successfully login or registered_
