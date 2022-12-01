@@ -19,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('items', ItemController::class);
 
 // Public Routes
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login'])
+->name('auth.login');
 
-Route::post('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register'])
+->name('auth.register');
 
 Route::get('/item/all', [ItemController::class, 'index'])
 ->name('item.index');
@@ -43,6 +45,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::delete('/item/{item}', [ItemController::class, 'destroy'])
     ->name('item.destroy');
-    
-    Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::post('/logout', [AuthController::class, 'logout'])
+    ->name('auth.logout');
 });

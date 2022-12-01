@@ -10,9 +10,9 @@ class ItemFactory extends Factory
     public function definition()
     {
         return [
-          'name' => $this->faker->name,
+          'name'        => $this->faker->name,
           'description' => $this->faker->sentence,
-          'slug' => $this->faker->slug 
+          'slug'        => $this->faker->slug 
         ];
     }
 }
