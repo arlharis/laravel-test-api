@@ -19,8 +19,7 @@ class ItemController extends Controller
         $request->merge(['slug' => $slug]);
 
         $request->validate([
-            'name' => 'required',
-            'slug' => 'required'
+            'name' => 'required'
         ]);
 
         $item = Item::create($request->all());
