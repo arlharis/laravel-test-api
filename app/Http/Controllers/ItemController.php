@@ -10,7 +10,7 @@ class ItemController extends Controller
 {
     public function index()
     {
-        return Item::all();
+        return response(Item::all());
     }
 
     public function store(Request $request)
@@ -19,16 +19,19 @@ class ItemController extends Controller
         $request->merge(['slug' => $slug]);
 
         $request->validate([
-            'name' => 'required',
-            'slug' => 'required'
+            'name' => 'required'
         ]);
 
-        return Item::create($request->all());
+        $item = Item::create($request->all());
+
+        return response($item, 201);
     }
 
     public function show(Item $item)
     {
-        return Item::find($item);
+        $item = Item::find($item);
+
+        return response($item);
     }
 
     public function update(Request $request, Item $item)
@@ -40,7 +43,8 @@ class ItemController extends Controller
 
         $item = Item::find($item->id);
         $item->update($request->all());
-        return $item;
+
+        return response($item, 202);
     }
 
     public function destroy(Item $item)
@@ -58,6 +62,6 @@ class ItemController extends Controller
         $item = Item::where('name', 'like', '%' . $keyword . '%')->orWhere('description', 'like', '%' . $keyword . '%')
         ->orWhere('slug', 'like', '%' . $keyword . '%')->orWhere('created_at', 'like', '%' . $keyword . '%')->get();
         
-        return $item;
+        return response($item);
     }
 }

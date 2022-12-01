@@ -76,7 +76,7 @@ _Notes: Please use the slug to update/delete and retrive single data_
 - [DELETE]  - localhost:8000/api/item/{item} - Delete existing Item
 - [POST]    - localhost:8000/api/logout - Logout (Terminate session)
 
-_Notes: To access the private routes, you need to get the token (copy the token after you successfully login or registered_
+_Notes: To access the private routes, you need to get the token (copy the token after you successfully login or registered)_
 
 - Go to `Authorization` section of the Postman.
 - Select `Bearer Token`.
@@ -87,6 +87,14 @@ _You can use this link to play with API online without cloning the repo. Just co
 
 ```
 https://85900ff824.lb3.amezmo.co
+```
+
+#### Test-Driven Development (TDD)
+_Notes: This is the TDD to test functionality of the API (ItemModel)_
+
+To run the TDD in Laravel:
+```
+php artisan test
 ```
 
 ## Acknowledgement
